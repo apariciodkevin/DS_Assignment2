@@ -7,6 +7,7 @@ public class Aparicio_assignment2 {
         double loanAmount;
         float interestRate;
         int years;
+        double principal;
         System.out.println("How much is the loan amount?");
         loanAmount = sc.nextDouble();
         System.out.println("What is the annual interest rate?");
@@ -15,9 +16,7 @@ public class Aparicio_assignment2 {
         years = sc.nextInt();
 
 
-
-
-
-
     }
+
+
 }
