@@ -7,13 +7,30 @@ public class Aparicio_assignment2 {
         double loanAmount;
         float interestRate;
         int years;
-        double principal;
+
         System.out.println("How much is the loan amount?");
         loanAmount = sc.nextDouble();
         System.out.println("What is the annual interest rate?");
         interestRate = sc.nextFloat();
         System.out.println("Enter the number of years: ");
         years = sc.nextInt();
+
+        System.out.printf("Loan Amount: $%.2f", loanAmount);
+        System.out.println();
+        System.out.printf("Interest Rate: %.2f%%", interestRate * 100);
+        System.out.println();
+
+        double monthlyPayment = (interestRate * loanAmount) / (1 - Math.pow(1 + interestRate, -years * 12));
+        System.out.printf("Monthly Payment: $%.2f", monthlyPayment);
+        System.out.println();
+
+        double totalCost = monthlyPayment * years * 12;
+        System.out.printf("Total Cost: $%.2f", totalCost);
+        System.out.println();
+
+        double ratioOverPrincipal = ((monthlyPayment * years * 12) - loanAmount) * 100 / loanAmount;
+        System.out.printf("Ratio paid over principal: %.2f%%", ratioOverPrincipal);
+        System.out.println();
 
 
     }
