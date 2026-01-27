@@ -24,17 +24,18 @@ public class Aparicio_assignment2 {
         System.out.println();
 
         // calculate monthly payment
-        double monthlyPayment = (interestRate * loanAmount) / (1 - Math.pow(1 + interestRate, -years * 12));
+        int loanPeriod = years * 12;
+        double monthlyPayment = (interestRate * loanAmount) / (1 - Math.pow(1 + interestRate, -loanPeriod));
         System.out.printf("Monthly Payment: $%.2f", monthlyPayment);
         System.out.println();
 
         // calculate total cost
-        double totalCost = monthlyPayment * years * 12;
+        double totalCost = monthlyPayment * loanPeriod;
         System.out.printf("Total Cost: $%.2f", totalCost);
         System.out.println();
 
         // calculate ratio over principal
-        double ratioOverPrincipal = ((monthlyPayment * years * 12) - loanAmount) * 100 / loanAmount;
+        double ratioOverPrincipal = ((monthlyPayment * loanPeriod) - loanAmount) * 100 / loanAmount;
         System.out.printf("Ratio paid over principal: %.2f%%", ratioOverPrincipal);
         System.out.println();
 
