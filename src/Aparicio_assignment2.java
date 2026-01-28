@@ -40,11 +40,13 @@ public class Aparicio_assignment2 {
         System.out.println();
 
         // Calculating the balance
+        // Starting balance
         double balance = loanAmount;
 
         for (int period = 1; period <= loanPeriod; period++){
             double interestAmount = balance * (interestRate/12);
             double principalAmount = monthlyPayment - interestAmount;
+            // This balance re assigns itself for the loop
             balance -= (monthlyPayment - interestAmount);
 
             System.out.printf("Monthly Payment: $%.2f", monthlyPayment);
@@ -77,7 +79,6 @@ public class Aparicio_assignment2 {
                 // Once it reaches condition it stops from repeating calculation
                 break;
             }
-
         }
     }
 }
